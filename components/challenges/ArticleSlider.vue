@@ -89,31 +89,33 @@ watch(direction, (newDirection) => {
 </script>
 
 <template>
-  <main class="flex h-screen w-full flex-col items-center justify-center bg-blue-200">
-    <div ref="slider" class="container mx-auto flex max-w-md gap-4 md:max-w-4xl">
-      <div class="slider-controls">
-        <a class="slider-button" @click="prevArticle">
-          <Icon name="mdi:chevron-left" />
-        </a>
-      </div>
+  <ClientOnly>
+    <main class="flex h-screen w-full flex-col items-center justify-center bg-blue-200">
+      <div ref="slider" class="container mx-auto flex max-w-md gap-4 md:max-w-4xl">
+        <div class="slider-controls">
+          <a class="slider-button" @click="prevArticle">
+            <Icon name="mdi:chevron-left" />
+          </a>
+        </div>
 
-      <Article :article="selectedArticle" />
+        <Article :article="selectedArticle" />
 
-      <div class="slider-controls">
-        <a class="slider-button" @click="nextArticle"><Icon name="mdi:chevron-right" /></a>
+        <div class="slider-controls">
+          <a class="slider-button" @click="nextArticle"><Icon name="mdi:chevron-right" /></a>
+        </div>
       </div>
-    </div>
-    <div class="text-6xl">
-      <span
-        v-for="index in articles.length"
-        :key="index"
-        class="inline-block drop-shadow"
-        :class="index === currentIndex + 1 ? 'text-blue-600' : 'text-gray-400'"
-      >
-        <a class="cursor-pointer select-none" @click="selectArticle(index - 1)">&bull;</a>
-      </span>
-    </div>
-  </main>
+      <div class="text-6xl">
+        <span
+          v-for="index in articles.length"
+          :key="index"
+          class="inline-block drop-shadow"
+          :class="index === currentIndex + 1 ? 'text-blue-600' : 'text-gray-400'"
+        >
+          <a class="cursor-pointer select-none" @click="selectArticle(index - 1)">&bull;</a>
+        </span>
+      </div>
+    </main>
+  </ClientOnly>
 </template>
 
 <style>
