@@ -4,8 +4,6 @@ import { favoriteContacts, conversations } from './messages';
 
 const selectedConversation = ref<Conversation | null>(null);
 
-selectedConversation.value = conversations[0];
-
 function selectConversation(conversation: Conversation) {
   selectedConversation.value = conversation;
 }
