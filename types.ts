@@ -19,3 +19,18 @@ export interface Article {
   };
   date: string;
 }
+
+export interface Contact {
+  name: string;
+  image: string;
+  online: boolean;
+}
+
+export interface Conversation {
+  contact: Contact;
+  messages: {
+    content: string;
+    time: string;
+    self: boolean;
+  }[];
+}
