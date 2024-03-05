@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArticleSlider, FurFriends, NotFound } from '#components';
+import { ArticleSlider, FurFriends, Messages, NotFound } from '#components';
 import type { Component } from 'vue';
 
 type Challenges = Record<string, { title: string; component: Component }>;
@@ -7,6 +7,7 @@ type Challenges = Record<string, { title: string; component: Component }>;
 const challenges: Challenges = {
   'fur-friends': { title: 'Fur Friends', component: FurFriends },
   'article-slider': { title: 'Article Slider', component: ArticleSlider },
+  messages: { title: 'Messages', component: Messages },
 };
 
 const route = useRoute();
