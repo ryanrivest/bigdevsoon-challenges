@@ -1,5 +1,3 @@
-import type { Contact, Conversation } from '~/types';
-
 export const contacts: Record<string, Contact> = {
   robert: {
     name: 'William Flickerman',
@@ -167,3 +165,26 @@ export const conversations: Conversation[] = [
     ],
   },
 ];
+
+export interface Contact {
+  name: string;
+  image: string;
+  online: boolean;
+}
+
+export interface Conversation {
+  contact: Contact;
+  messages: Message[];
+}
+
+export interface ConversationPreview {
+  contact: Contact;
+  messages: Message[];
+  lastMessage: Message;
+}
+
+export interface Message {
+  content: string;
+  time: string;
+  self: boolean;
+}

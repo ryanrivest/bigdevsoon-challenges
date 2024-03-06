@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import type { Conversation } from '~/types';
+import type { Conversation } from './';
 
 const props = defineProps<{
   conversation: Conversation;
 }>();
 
+const emit = defineEmits(['conversationClosed']);
+
 const { conversation } = toRefs(props);
 const { contact, messages } = conversation.value;
+
+function backClick() {
+  emit('conversationClosed');
+}
 </script>
 
 <template>
@@ -15,7 +21,7 @@ const { contact, messages } = conversation.value;
       <ContactImage :contact="contact" />
       <h1 class="text-2xl font-semibold">{{ contact.name }}</h1>
       <button>
-        <Icon name="mdi:arrow-left" class="absolute left-4 top-1/3 text-3xl" @click="$emit('conversationClosed')" />
+        <Icon name="mdi:arrow-left" class="absolute left-4 top-1/3 text-3xl" @click="backClick" />
       </button>
     </header>
     <ul class="flex w-full flex-col gap-4 p-4">

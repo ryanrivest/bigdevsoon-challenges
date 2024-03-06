@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import type { Conversation } from '~/types';
+import type { Conversation, ConversationPreview } from './';
 
 const props = defineProps<{
   conversations: Conversation[];
 }>();
 
 const { conversations } = toRefs(props);
+
+const emit = defineEmits(['conversationSelected']);
 
 const previews = computed(() => {
   return conversations.value.map((conversation) => {
@@ -15,6 +17,10 @@ const previews = computed(() => {
     };
   });
 });
+
+function conversationClick(preview: ConversationPreview) {
+  emit('conversationSelected', preview);
+}
 </script>
 
 <template>
@@ -24,7 +30,7 @@ const previews = computed(() => {
         v-for="preview in previews"
         :key="preview.contact.name"
         class="flex cursor-pointer gap-4 py-3 hover:bg-orange-100"
-        @click="$emit('conversationSelected', preview)"
+        @click="conversationClick(preview)"
       >
         <div class="shrink pl-6">
           <ContactImage :contact="preview.contact" />

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Popper from 'vue3-popper';
-import type { Article } from '~/types';
+import type { Article } from './';
 
 const props = defineProps<{
   article: Article;

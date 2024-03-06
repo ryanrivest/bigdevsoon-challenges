@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Contact } from '~/types';
+import type { Contact } from './';
 
 const props = defineProps<{
   contact: Contact;
