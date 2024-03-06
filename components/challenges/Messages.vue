@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Conversation } from '~/types';
-import { favoriteContacts, conversations } from './messages';
+import { type Conversation, favoriteContacts, conversations } from './messages';
 
 const selectedConversation = ref<Conversation | null>(null);
 
@@ -15,7 +14,7 @@ function clearConversation() {
 
 <template>
   <ClientOnly>
-    <div class="h-screen w-screen bg-white md:bg-orange-100">
+    <div class="h-screen w-screen bg-white md:bg-zinc-200">
       <div class="container mx-auto flex h-screen">
         <div class="w-full bg-white md:m-auto md:h-3/4 md:max-w-md md:rounded-3xl">
           <div v-if="!selectedConversation" class="flex flex-col items-center gap-4 py-4">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Dog } from '~/types';
+import type { Dog } from './fur-friends';
 
 const dogs = ref<Dog[]>([
   {
