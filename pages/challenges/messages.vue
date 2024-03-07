@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { type Conversation, favoriteContacts, conversations } from './messages';
+import { type Conversation, favoriteContacts, conversations } from '~/components/challenges/messages';
+
+useHead({
+  title: 'Messages',
+});
 
 const selectedConversation = ref<Conversation | null>(null);
 

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import type { Dog } from './fur-friends';
+import type { Dog } from '~/components/challenges/fur-friends';
+
+useHead({
+  title: 'Fur Friends',
+});
 
 const dogs = ref<Dog[]>([
   {
