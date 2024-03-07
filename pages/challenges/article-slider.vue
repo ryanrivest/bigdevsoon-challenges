@@ -2,12 +2,12 @@
 import type { Article } from '~/components/challenges/article-slider';
 import { useSwipe } from '@vueuse/core';
 
-const slider = ref(null);
-const { direction } = useSwipe(slider);
-
 useHead({
   title: 'Article Slider',
 });
+
+const slider = ref(null);
+const { direction } = useSwipe(slider);
 
 const articles = ref<Article[]>([
   {
