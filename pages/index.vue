@@ -8,6 +8,9 @@
       <li>
         <NuxtLink to="/challenges/article-slider">Article Slider</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/challenges/messages">Messages</NuxtLink>
+      </li>
     </ul>
   </main>
 </template>
